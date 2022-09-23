@@ -26,9 +26,9 @@ public class User {
     @Column(name = "nophone")
     private String nophone;
 
+//    @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    @Enumerated(EnumType.STRING)
-    private USER_ROLE role;
+    private int role;
 
     public Long getId() {
         return id;
@@ -70,11 +70,11 @@ public class User {
         this.nophone = nophone;
     }
 
-    public USER_ROLE getRole() {
+    public int getRole() {
         return role;
     }
 
-    public void setRole(USER_ROLE role) {
+    public void setRole(int role) {
         this.role = role;
     }
 }

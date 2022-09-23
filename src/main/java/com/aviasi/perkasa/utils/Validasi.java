@@ -1,6 +1,7 @@
 package com.aviasi.perkasa.utils;
 
 import com.aviasi.perkasa.repositories.AirPortRepository;
+import com.aviasi.perkasa.repositories.OrderRepository;
 import com.aviasi.perkasa.repositories.TravelRepository;
 import com.aviasi.perkasa.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,10 @@ public class Validasi {
 //
 //    @Autowired
 //    FromToRepository fromToRepository;
-//
-//    @Autowired
-//    OrderRepository orderRepository;
-//
+
+    @Autowired
+    OrderRepository orderRepository;
+
 //    @Autowired
 //    PaymentRepository paymentRepository;
 //
@@ -39,6 +40,66 @@ public class Validasi {
 
     @Autowired
     UserRepository userRepository;
+
+    public Map<String, Object> idorder(long order_id){
+
+
+        Map<String, Object> response = new HashMap<>();
+        try{
+            int cekorder = orderRepository.cekorderid(order_id);
+
+            if (cekorder > 0) {
+                response.put(Constants.STATUS_CODE, Constants.SUCCESS_CODE);
+
+                return response;
+
+            } else  {
+                response.put(Constants.STATUS_CODE, Constants.FAILED_CODE);
+                response.put(Constants.STATUS, "order not found");
+
+                return response;
+            }
+
+
+        }catch (Exception e){
+
+            response.put(Constants.STATUS_CODE, Constants.FAILED_CODE);
+            response.put(Constants.STATUS, "order not found");
+
+            return response;
+        }
+
+    }
+
+    public Map<String, Object> idordersecond(long order_idsecond){
+
+
+        Map<String, Object> response = new HashMap<>();
+        try{
+            int cekorder = orderRepository.cekorderidsecond(order_idsecond);
+
+            if (cekorder > 0) {
+                response.put(Constants.STATUS_CODE, Constants.SUCCESS_CODE);
+
+                return response;
+
+            } else  {
+                response.put(Constants.STATUS_CODE, Constants.FAILED_CODE);
+                response.put(Constants.STATUS, "order second not found");
+
+                return response;
+            }
+
+
+        }catch (Exception e){
+
+            response.put(Constants.STATUS_CODE, Constants.FAILED_CODE);
+            response.put(Constants.STATUS, "order second not found");
+
+            return response;
+        }
+
+    }
 
     public Map<String, Object> idtravel(long travel_id){
 
@@ -101,7 +162,7 @@ public class Validasi {
 
     }
 
-    Map<String, Object> iduser(long id_user){
+    public Map<String, Object> iduser(long id_user){
 
         Map<String, Object> response = new HashMap<>();
 

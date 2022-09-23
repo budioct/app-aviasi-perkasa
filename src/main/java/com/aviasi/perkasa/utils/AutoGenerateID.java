@@ -1,6 +1,7 @@
 package com.aviasi.perkasa.utils;
 
 import com.aviasi.perkasa.repositories.AirPortRepository;
+import com.aviasi.perkasa.repositories.OrderRepository;
 import com.aviasi.perkasa.repositories.TravelRepository;
 import com.aviasi.perkasa.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +25,10 @@ public class AutoGenerateID {
 //
 //    @Autowired
 //    FromToRepository fromToRepository;
-//
-//    @Autowired
-//    OrderRepository orderRepository;
+
+    @Autowired
+    OrderRepository orderRepository;
+
 //
 //    @Autowired
 //    PaymentRepository paymentRepository;
@@ -79,19 +81,35 @@ public class AutoGenerateID {
 //        return urutan;
 //    }
 //
-//    public long orderID() {
-//        long banyakData = orderRepository.generateOrderId();
-//        long nomorBerikutnya = banyakData + 1;
-//        long urutan =0 ;
-//        if (banyakData == 0) {
-//            urutan = 1;
-//        } else {
-//            urutan = nomorBerikutnya;
-//        }
-//
-//        return urutan;
-//    }
-//
+    public long orderID() {
+        long banyakData = orderRepository.generateOrderId();
+        long nomorBerikutnya = banyakData + 1;
+        long urutan =0 ;
+        if (banyakData == 0) {
+            urutan = 1;
+        } else {
+            urutan = nomorBerikutnya;
+        }
+
+        return urutan;
+    }
+
+    public long orderIDsecond() {
+        long banyakData = orderRepository.generateOrderIdSecond();
+        long nomorBerikutnya = banyakData + 1;
+        long urutan =0 ;
+        if (banyakData == 0) {
+            urutan = 1;
+        } else {
+            urutan = nomorBerikutnya;
+        }
+
+        return urutan;
+    }
+
+
+
+
 //    public long paymentID() {
 //        long banyakData = paymentRepository.generatePaymentId();
 //        long nomorBerikutnya = banyakData + 1;

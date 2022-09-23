@@ -2,10 +2,8 @@ package com.aviasi.perkasa.models;
 
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "travel")
@@ -18,8 +16,19 @@ public class Travel {
     @Column(name = "category")
     private String travel_category;
 
-    @Column(name = "kd_travel")
-    private String travel_kode;
+    @Column(name = "deskripsi")
+    private String travel_deskripsi;
+
+
+
+
+//    @OneToOne
+//    @JoinColumn(name = "travel_id")
+//    private Orders order;
+
+
+
+
 
     public Long getTravel_id() {
         return travel_id;
@@ -37,11 +46,19 @@ public class Travel {
         this.travel_category = travel_category;
     }
 
-    public String getTravel_kode() {
-        return travel_kode;
+    public String getTravel_deskripsi() {
+        return travel_deskripsi;
     }
 
-    public void setTravel_kode(String travel_kode) {
-        this.travel_kode = travel_kode;
+    public void setTravel_deskripsi(String travel_deskripsi) {
+        this.travel_deskripsi = travel_deskripsi;
     }
+
+//    public Orders getOrder() {
+//        return order;
+//    }
+//
+//    public void setOrder(Orders order) {
+//        this.order = order;
+//    }
 }

@@ -11,7 +11,7 @@ public class UserDTO {
     private String password;
     private String email;
     private String nophone;
-    private USER_ROLE role;
+    private int role;
 
     public long getId() {
         return id;
@@ -53,11 +53,12 @@ public class UserDTO {
         this.nophone = nophone;
     }
 
-    public USER_ROLE getRole() {
+    public int getRole() {
         return role;
     }
 
-    public void setRole(USER_ROLE role) {
+    public void setRole(int role) {
         this.role = role;
     }
+
 }

@@ -5,16 +5,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class TravelDTO {
 
-    private long id;
+    private long travel_id;
     private String travel_category;
-    private String travel_kode;
+    private String travel_deskripsi;
+//    private long order_id; // id order
 
-    public long getId() {
-        return id;
+    public long getTravel_id() {
+        return travel_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setTravel_id(long travel_id) {
+        this.travel_id = travel_id;
     }
 
     public String getTravel_category() {
@@ -25,11 +26,11 @@ public class TravelDTO {
         this.travel_category = travel_category;
     }
 
-    public String getTravel_kode() {
-        return travel_kode;
+    public String getTravel_deskripsi() {
+        return travel_deskripsi;
     }
 
-    public void setTravel_kode(String travel_kode) {
-        this.travel_kode = travel_kode;
+    public void setTravel_deskripsi(String travel_deskripsi) {
+        this.travel_deskripsi = travel_deskripsi;
     }
 }
