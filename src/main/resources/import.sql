@@ -1,0 +1,3 @@
+INSERT INTO `db_aviasi_perkasa`.`user`(`id`, `email`, `name`, `nophone`, `password`, `role`) VALUES (1, 'budi@test.com', 'budi', '081314151617', '123', 1);
+INSERT INTO `db_aviasi_perkasa`.`user`(`id`, `email`, `name`, `nophone`, `password`, `role`) VALUES (1, 'andre@test.com', 'andre', '081415161718', '123', 0);
+INSERT INTO `db_aviasi_perkasa`.`user`(`id`, `email`, `name`, `nophone`, `password`, `role`) VALUES (1, 'intan@test.com', 'intan', '081516171819', '123', 1);
